@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>總平均成績點數計算網站</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body>
+    <!-- 這是開場動畫 -->
+    <!-- <section class="animation-wrapper">
+      <section class="animation">
+        <div class="hero">
+          <img src="./photo/IMG_2082.JPG" alt="image" />
+        </div>
+      </section>
+      <div class="slider"></div>
+    </section> -->
+
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="main-part">
+        <h1>請輸入課程資訊及成績</h1>
+
+        <div class="buttons">
+          <button class="btn sort-descending">降序排序</button>
+          <button class="btn sort-ascending">升序排序</button>
+        </div>
+
+        <div class="all-inputs">
+          <form>
+            <div class="grader">
+              <input
+                type="text"
+                placeholder="課程名稱"
+                class="class-type"
+                list="opt"
+              /><!--
+              --><input
+                type="text"
+                placeholder="課程號碼"
+                class="class-number"
+              /><!--
+              --><input
+                type="number"
+                placeholder="學分數"
+                min="0"
+                max="6"
+                class="class-credit"
+              /><!--
+              --><select name="" id="">
+                <option value="none"></option>
+                <option value="A">A</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="B-">B-</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="C-">C-</option>
+                <option value="D+">D+</option>
+                <option value="D">D</option>
+                <option value="D-">D-</option>
+                <option value="F">F</option></select
+              ><!--
+              --><button class="trash-button">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </form>
+          <form>
+            <div class="grader">
+              <input
+                type="text"
+                placeholder="課程名稱"
+                class="class-type"
+                list="opt"
+              /><!--
+              --><input
+                type="text"
+                placeholder="課程號碼"
+                class="class-number"
+              /><!--
+              --><input
+                type="number"
+                placeholder="學分數"
+                min="0"
+                max="6"
+                class="class-credit"
+              /><!--
+              --><select name="" id="">
+                <option value="none"></option>
+                <option value="A">A</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="B-">B-</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="C-">C-</option>
+                <option value="D+">D+</option>
+                <option value="D">D</option>
+                <option value="D-">D-</option>
+                <option value="F">F</option></select
+              ><!--
+              --><button class="trash-button">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </form>
+          <form>
+            <div class="grader">
+              <input
+                type="text"
+                placeholder="課程名稱"
+                class="class-type"
+                list="opt"
+              /><!--
+              --><input
+                type="text"
+                placeholder="課程號碼"
+                class="class-number"
+              /><!--
+              --><input
+                type="number"
+                placeholder="學分數"
+                min="0"
+                max="6"
+                class="class-credit"
+              /><!--
+              --><select name="" id="">
+                <option value="none"></option>
+                <option value="A">A</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="B-">B-</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="C-">C-</option>
+                <option value="D+">D+</option>
+                <option value="D">D</option>
+                <option value="D-">D-</option>
+                <option value="F">F</option></select
+              ><!--
+              --><button class="trash-button">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <button type="button" class="plus-btn">
+          <i class="fas fa-plus-square"></i>
+        </button>
+
+        <div class="result">
+          <p class="gpa-text">
+            你這學期的<br />
+            總平均成績點數是： <br />
+          </p>
+          <h1 id="result-gpa">0.00</h1>
+        </div>
+      </section>
+    </main>
+
+    <datalist id="opt">
+      <option value="CHIN">國文</option>
+      <option value="MATH">數學</option>
+      <option value="ENG">英文</option>
+      <option value="PHY">物理</option>
+      <option value="CHEM">化學</option>
+    </datalist>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"
+      integrity="sha512-0xrMWUXzEAc+VY7k48pWd5YT6ig03p4KARKxs4Bqxb9atrcn2fV41fWs+YXTKb8lD2sbPAmZMjKENiyzM/Gagw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+      integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
